@@ -3,13 +3,11 @@
         run: |
           SDK="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
           SDKMANAGER="$SDK/cmdline-tools/latest/bin/sdkmanager"
-
           if [ ! -x "$SDKMANAGER" ]; then
             echo "sdkmanager tidak ditemukan atau tidak dapat dijalankan"
             find "$SDK/cmdline-tools" -name sdkmanager -type f
             exit 1
           fi
-
           yes | "$SDKMANAGER" --licenses
           "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
           
