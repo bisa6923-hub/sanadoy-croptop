@@ -63,5 +63,20 @@ public class MainActivity extends ComponentActivity {
             Toast.makeText(this,"Mengambil layar…",Toast.LENGTH_SHORT).show();
         });
     }
-    @Override protected void onDestroy(){ if(captureReceiver!=null) unregisterReceiver(captureReceiver); super.onDestroy(); }\n    private Button button(String s){ Button b=new Button(this); b.setText(s); b.setTextColor(0xFFFFFFFF); b.setBackgroundTintList(android.content.res.ColorStateList.valueOf(0xFF6759E8)); return b; }
+    @Override
+protected void onDestroy() {
+    if (captureReceiver != null) {
+        unregisterReceiver(captureReceiver);
+    }
+    super.onDestroy();
+}
+
+private Button button(String s) {
+    Button b = new Button(this);
+    b.setText(s);
+    b.setTextColor(0xFFFFFFFF);
+    b.setBackgroundTintList(
+        android.content.res.ColorStateList.valueOf(0xFF6759E8)
+    );
+    return b;
 }
